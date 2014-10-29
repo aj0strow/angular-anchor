@@ -1,0 +1,34 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>angular-anchor</title>
+  <link rel="stylesheet" href="/bower_components/mocha/mocha.css">
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/node-assert/assert.js"></script>
+  <script src="/bower_components/mocha/mocha.js"></script>
+  <script src="/angular-anchor.js"></script>
+</head>
+<body ng-app="test">
+  <div style="height: 0; overflow: hidden;" ng-controller="TestController">
+    <a id="test-empty" href>Test Empty</a>
+    <a id="test-hash" href="#">Test Hash</a>
+    <a id="test-local" href="/local/page">Test Local</a>
+    <a id="test-external" href="http://twitter.com">Test External</a>
+    <a id="test-dynamic" ng-href="{{ url }}"></a>
+  </div>
+
+  <div id="mocha"></div>
+
+  <script>mocha.setup('bdd')</script>
+  <script>
+    var app = angular.module('test', [ 'ngAnchor' ])
+    app.controller('TestController', function ($scope) {
+      $scope.ready = true
+      $scope.url = 'https://twitter.com/aj0strow'
+    })
+  </script>
+  <script src="/test/anchor.spec.js"></script>
+  <script>$(mocha.run)</script>
+  </body>
+</html>

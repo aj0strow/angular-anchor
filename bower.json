@@ -1,0 +1,19 @@
+{
+  "name": "angular-anchor",
+  "version": "0.0.0",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "anchor",
+    "target",
+    "blank",
+    "a",
+    "href"
+  ],
+  "devDependencies": {
+    "angular": "~1.3",
+    "mocha": "~1.21",
+    "node-assert": "Jxck/assert",
+    "jquery": "~2.1"
+  }
+}
